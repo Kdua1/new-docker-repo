@@ -2,7 +2,7 @@ name: Build Docker image
 on:
   push:
      branches: [main]
-  jobs:
+ jobs:
      build:
        run-on:ubuntu-latest
        
@@ -10,12 +10,12 @@ on:
        -uses: actions/checkout@v2
        -name: Login to DockerHub
        uses: docker/login-action@v1
-      with:
+       with:
          username: ${{ secrets.DOCKER_USERNAME }}
          password: ${{ secrets.DOCKER_PASSWOED }}
          -name: Build Docker Image
          uses: docker/build-push-action@v2
-      with: 
+       with: 
          context: .
          push: true
          tags: kdua1/kwakudua:${{ github.sha }}
