@@ -3,7 +3,6 @@ name: Build docker pipeline
 on:
   push:
     branches: [ main ]
-   
  jobs:
      build docker:
        run-on: ubuntu-latest
